@@ -57,10 +57,15 @@ namespace jRandomSkills
             CEntityInstance param = h.GetParam<CEntityInstance>(0);
             CTakeDamageInfo param2 = h.GetParam<CTakeDamageInfo>(1);
 
-            if (param == null || param2 == null || param2.Attacker == null)
+            if (!Utils.IsDamageValid(param, param2))
+            {
                 return HookResult.Continue;
+            }
 
-            CCSPlayerPawn attackerPawn = new CCSPlayerPawn(param2.Attacker.Value.Handle);
+            // Checked in the function above
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+            CCSPlayerPawn attackerPawn = new(param2.Attacker.Value.Handle);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
             CCSPlayerPawn victimPawn = new CCSPlayerPawn(param.Handle);
 
             if (attackerPawn == null || attackerPawn.Controller?.Value == null || victimPawn == null || victimPawn.Controller?.Value == null)
