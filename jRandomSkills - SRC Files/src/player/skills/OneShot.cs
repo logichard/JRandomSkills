@@ -24,8 +24,10 @@ namespace jRandomSkills
             CEntityInstance param = h.GetParam<CEntityInstance>(0);
             CTakeDamageInfo param2 = h.GetParam<CTakeDamageInfo>(1);
 
-            if (param == null || param2 == null || param2.Attacker == null)
+            if (param == null || param2 == null || param2.Attacker == null || param2.Attacker.Value == null || param.Entity == null || !param.IsValid)
+            {
                 return HookResult.Continue;
+            }
 
             CCSPlayerPawn attackerPawn = new CCSPlayerPawn(param2.Attacker.Value.Handle);
             CCSPlayerPawn victimPawn = new CCSPlayerPawn(param.Handle);
