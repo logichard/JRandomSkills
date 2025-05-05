@@ -19,5 +19,32 @@ namespace jRandomSkills
                 SkillData.Skills.Add(new dSkill_SkillInfo(skill, color, display));
             }
         }
+
+        public static bool IsDamageValid(CEntityInstance instance, CTakeDamageInfo damageInfo, bool requirePlayer = true)
+        {
+            if (instance == null || damageInfo == null)
+            {
+                return false;
+            }
+
+            // Victim checks
+            if (!instance.IsValid || instance.DesignerName == null || !instance.DesignerName.Equals("player") || instance.Entity == null || instance.CScriptComponent == null)
+            {
+                return false;
+            }
+
+            if (damageInfo == null || damageInfo.Attacker == null || damageInfo.Attacker.Value == null|| !damageInfo.Attacker.IsValid)
+            {
+                return false;
+            }
+
+            // Check if Attacker is also a player
+            if (requirePlayer && !damageInfo.Attacker.Value.DesignerName.Equals("player"))
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }
