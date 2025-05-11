@@ -395,6 +395,24 @@
       "ChanceTo": 1.0,
       "Team": 1,
       "Only1v1": false
+    },
+    {
+      "Name": "Avenger",
+      "Active": true,
+      "Cooldown": 5.0,
+      "ChanceFrom": 1.0,
+      "ChanceTo": 1.0,
+      "Team": 1,
+      "Only1v1": false
+    },
+    {
+      "Name": "Illusionist",
+      "Active": true,
+      "Cooldown": 12.0,
+      "ChanceFrom": 1.0,
+      "ChanceTo": 1.0,
+      "Team": 1,
+      "Only1v1": false
     }
   ],
   "Settings": {
