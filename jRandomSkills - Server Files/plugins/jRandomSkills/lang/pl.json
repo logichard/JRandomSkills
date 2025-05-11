@@ -60,6 +60,7 @@
   "swapposition_desc": "Zamiana miejscami z losowym wrogiem. Kliknij [css_useSkill], cooldown 30s",
   "avenger_desc" : "Gracz ma 5 sekund na rzucenie granatu zemsty",
   "illusionist_desc" : "Tworzy fałszywe odbicie twojej postaci, które biegnie w wybranym kierunku przez 4 sekundy. Naciśnij [css_useSkill], cooldown: 12s",
+  "chemic_desc" : "Twoje granaty dymne są trujące i zadają 10 punkty obrażeń na sekundę przeciwnikom",
 
   "welcome_message": "Witaj {PLAYER} na serwerze {SERVER_NAME}!\nAktualna wersja jRandomSkills: {VERSION} ({SKILLS_COUNT} supermocy).\n\nPierwotnie plugin stworzona przez:\n{AUTHOR1}\nZmodyfikowany i ulepszony przez:\n{AUTHOR2}",
   "hud_info": "Poczekaj jeszcze {0} sekund",
@@ -127,5 +128,6 @@
   "shade": "Cień",
   "antyhead": "Żelazna Głowa",
   "avenger" : "Mściciel",
-  "illusionist" : "Iluzjonista"
+  "illusionist" : "Iluzjonista",
+  "chemic" : "Chemik"
 }

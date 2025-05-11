@@ -60,6 +60,7 @@
   "swapposition_desc": "Swap places with a random enemy. Press [css_useSkill], cooldown 30s",
   "avenger_desc" : "The player has 5 seconds to throw the 'revenge grenade",
   "illusionist_desc" : "Creates a false copy of your character that runs in the chosen direction for 4 seconds. Press [css_useSkill], cooldown: 12s",
+  "chemic_desc" : "Your smoke grenades are poisonous and deal 10 points of damage per second to enemies.",
 
   "welcome_message": "Welcome {PLAYER} to {SERVER_NAME}!\nCurrent jRandomSkills version: {VERSION} ({SKILLS_COUNT} skills).\n\nOriginally created by:\n{AUTHOR1}\nModified and improved by:\n{AUTHOR2}",
   "hud_info": "Wait {0} seconds",
@@ -127,5 +128,6 @@
   "pilot": "Pilot",
   "shade": "Shade",
   "antyhead": "Anty Head",
-  "illusionist" : "Illusionist"
+  "illusionist" : "Illusionist",
+  "chemic" : "Chemic"
 }

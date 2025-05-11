@@ -413,7 +413,17 @@
       "ChanceTo": 1.0,
       "Team": 1,
       "Only1v1": false
+    },
+    {
+      "Name": "Chemic",
+      "Active": true,
+      "Cooldown": 15.0,
+      "ChanceFrom": 1.0,
+      "ChanceTo": 1.0,
+      "Team": 1,
+      "Only1v1": false
     }
+    
   ],
   "Settings": {
     "LangCode": "en",
