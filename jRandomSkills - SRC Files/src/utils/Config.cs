@@ -115,6 +115,7 @@ namespace jRandomSkills
                 new SkillInfo(Skills.Pilot),
                 new SkillInfo(Skills.Shade),
                 new SkillInfo(Skills.AntyHead),
+                new SkillInfo(Skills.Chemic),
             };
         }
 

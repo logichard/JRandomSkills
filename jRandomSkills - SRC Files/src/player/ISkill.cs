@@ -64,4 +64,5 @@ public enum Skills
     Shade,
     AntyHead,
     Illusionist,
+    Chemic,
 }
