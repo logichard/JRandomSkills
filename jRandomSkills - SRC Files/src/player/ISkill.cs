@@ -38,7 +38,7 @@ public enum Skills
     RandomWeapon,
     WeaponsSwap,
     Wallhack,
-
+    Avenger,
     Flash,
     PawelJumper,
     BunnyHop,
@@ -63,4 +63,5 @@ public enum Skills
     Pilot,
     Shade,
     AntyHead,
+    Illusionist,
 }
