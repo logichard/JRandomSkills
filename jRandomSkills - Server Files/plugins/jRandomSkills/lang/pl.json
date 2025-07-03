@@ -20,7 +20,7 @@
   "muhammed_desc": "Po śmierci wybucha i zabija graczy w obrębie",
   "dwarf_desc": "Losowa wielkość postaci na początku rundy",
   "dwarf_desc2": "Twój mnożnik wielkości to {0}x",
-  "medic_desc": "Otrzymujesz losową ilość apteczek na start rundy",
+  "medic_desc": "Otrzymujesz losową ilość apteczek na start rundy i możesz leczyć Zeusem",
   "randomweapon_desc": "Dostajesz losową broń. Kliknij [css_useSkill], cooldown 15s",
   "chicken_desc": "Otrzymujesz model kurczaka + jesteś o 10% szybszy - 50hp",
   "impostor_desc": "Otrzymujesz na start rundy model postaci wroga",
@@ -58,6 +58,9 @@
   "soldier_desc": "Masz losowy mnożnik obrażeń",
   "soldier_desc2": "Twój mnożnik obrażeń wynosi: {0}x",
   "swapposition_desc": "Zamiana miejscami z losowym wrogiem. Kliknij [css_useSkill], cooldown 30s",
+  "avenger_desc" : "Gracz ma 5 sekund na rzucenie granatu zemsty",
+  "illusionist_desc" : "Tworzy fałszywe odbicie twojej postaci, które biegnie w wybranym kierunku przez 4 sekundy. Naciśnij [css_useSkill], cooldown: 12s",
+  "chemic_desc" : "Twoje granaty dymne są trujące i zadają 10 punkty obrażeń na sekundę przeciwnikom",
 
   "welcome_message": "Witaj {PLAYER} na serwerze {SERVER_NAME}!\nAktualna wersja jRandomSkills: {VERSION} ({SKILLS_COUNT} supermocy).\n\nPierwotnie plugin stworzona przez:\n{AUTHOR1}\nZmodyfikowany i ulepszony przez:\n{AUTHOR2}",
   "hud_info": "Poczekaj jeszcze {0} sekund",
@@ -123,5 +126,8 @@
   "phoenix": "Phoenix",
   "pilot": "Pilot",
   "shade": "Cień",
-  "antyhead": "Żelazna Głowa"
+  "antyhead": "Żelazna Głowa",
+  "avenger" : "Mściciel",
+  "illusionist" : "Iluzjonista",
+  "chemic" : "Chemik"
 }
