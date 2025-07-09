@@ -25,6 +25,21 @@ namespace jRandomSkills
                 return;
 
             Utils.RegisterSkill(skillName, "#fbff00");
+            
+            Instance.RegisterEventHandler<EventRoundFreezeEnd>((@event, info) =>
+            {
+                Instance.AddTimer(0.1f, () => 
+                {
+                    foreach (var player in Utilities.GetPlayers())
+                    {
+                        if (!Instance.IsPlayerValid(player)) continue;
+                        var playerInfo = Instance.skillPlayer.FirstOrDefault(p => p.SteamID == player.SteamID);
+                        if (playerInfo?.Skill != skillName) continue;
+                        EnableSkill(player);
+                    }
+                });
+                return HookResult.Continue;
+            });
 
             Instance.RegisterEventHandler<EventWeaponFire>((@event, info) =>
             {
@@ -125,6 +140,22 @@ namespace jRandomSkills
                 return HookResult.Continue;
             });
         }
+        public static void EnableSkill(CCSPlayerController player)
+        {
+            if (!player.IsValid || player.PlayerPawn?.Value == null) return;
+            var pawn = player.PlayerPawn?.Value;
+            if (pawn == null) return;
+
+            bool hasZeus = pawn.WeaponServices!.MyWeapons
+                .Where(h => h.IsValid)
+                .Select(h => h.Value)
+                .Any(w => w != null && w.DesignerName == "weapon_taser");
+            if (!hasZeus)
+            {
+                player.GiveNamedItem("weapon_taser");
+            }
+        }
+
 
         private static Vector AngleToDirection(QAngle angles)
         {

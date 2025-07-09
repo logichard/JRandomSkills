@@ -25,7 +25,7 @@ namespace jRandomSkills
             Instance = this;
 
             Config.Initialize();
-            Localization.Load();
+            Localization.Load(); 
             Event.Load();
             PlayerOnTick.Load();
             Command.Load();

@@ -12,6 +12,9 @@ namespace jRandomSkills
 
         public static void LoadSkill()
         {
+            if (Config.config.SkillsInfo.FirstOrDefault(s => s.Name == skillName.ToString())?.Active != true)
+                return;
+
             Utils.RegisterSkill(skillName, "#8A2BE2");
             
             Instance.RegisterEventHandler<EventBombBeginplant>((@event, info) =>

@@ -77,7 +77,7 @@ namespace jRandomSkills
                 new SkillInfo(Skills.FrozenDecoy),
                 new SkillInfo(Skills.Soldier, chanceFrom: 1.15f, chanceTo: 1.35f),
                 new SkillInfo(Skills.Armored, chanceFrom : .65f, chanceTo : .85f),
-                new SkillInfo(Skills.Aimbot, only1v1: true),
+                new SkillInfo(Skills.Aimbot, only1v1: false),
                 new SkillInfo(Skills.Retreat, cooldown: 15),
                 new SkillInfo(Skills.EnemySpawn, cooldown: 15),
                 new SkillInfo(Skills.Zeus),

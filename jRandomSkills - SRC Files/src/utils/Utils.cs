@@ -28,7 +28,9 @@ namespace jRandomSkills
             }
 
             // Victim checks
-            if (!instance.IsValid || instance.DesignerName == null || !instance.DesignerName.Equals("player") || instance.Entity == null || instance.CScriptComponent == null)
+           // if (!instance.IsValid || instance.DesignerName == null || !instance.DesignerName.Equals("player") || instance.Entity == null || instance.CScriptComponent == null)
+           // Idk what is instance.CScriptComponent and why it shoudnt be null :wtf: 
+            if (!instance.IsValid || instance.DesignerName == null || !instance.DesignerName.Equals("player") || instance.Entity == null)
             {
                 return false;
             }

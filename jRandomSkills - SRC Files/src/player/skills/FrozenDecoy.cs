@@ -24,7 +24,20 @@ namespace jRandomSkills
                 return;
 
             Utils.RegisterSkill(skillName, "#00eaff");
-
+            Instance.RegisterEventHandler<EventRoundFreezeEnd>((@event, info) =>
+            {
+                Instance.AddTimer(0.1f, () => 
+                {
+                    foreach (var player in Utilities.GetPlayers())
+                    {
+                        if (!Instance.IsPlayerValid(player)) continue;
+                        var playerInfo = Instance.skillPlayer.FirstOrDefault(p => p.SteamID == player.SteamID);
+                        if (playerInfo?.Skill != skillName) continue;
+                        EnableSkill(player);
+                    }
+                });
+                return HookResult.Continue;
+            });
             Instance.RegisterEventHandler<EventRoundStart>((@event, info) =>
             {
                 gravities.Clear();
@@ -39,7 +52,6 @@ namespace jRandomSkills
 
                 var playerInfo = Instance.skillPlayer.FirstOrDefault(p => p.SteamID == player.SteamID);
                 if (playerInfo?.Skill != skillName) return HookResult.Continue;
-
                 var trigger = Utilities.CreateEntityByName<CTriggerMultiple>("trigger_multiple");
                 if (trigger == null) return HookResult.Continue;
 
@@ -98,6 +110,21 @@ namespace jRandomSkills
             VirtualFunctions.CBaseTrigger_StartTouchFunc.Hook(StartTouchFun, HookMode.Post);
             VirtualFunctions.CBaseTrigger_EndTouchFunc.Hook(EndTouchFunc, HookMode.Post);
         }
+        public static void EnableSkill(CCSPlayerController player)
+        {
+            if (!player.IsValid || player.PlayerPawn?.Value == null) return;
+            var pawn = player.PlayerPawn?.Value;
+            if (pawn == null) return;
+
+            bool hasDecoy = pawn.WeaponServices!.MyWeapons
+                .Where(h => h.IsValid)
+                .Select(h => h.Value)
+                .Any(w => w != null && w.DesignerName == "weapon_decoy");
+            if (!hasDecoy)
+            {
+                player.GiveNamedItem("weapon_decoy");
+            }
+        }
 
         private static HookResult StartTouchFun(DynamicHook h)
         {
@@ -141,4 +168,5 @@ namespace jRandomSkills
             return HookResult.Continue;
         }
     }
+    
 }

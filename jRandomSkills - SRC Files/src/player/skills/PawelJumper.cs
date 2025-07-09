@@ -49,7 +49,7 @@ namespace jRandomSkills
             {
                 J[player.Slot] = 0;
             }
-            else if ((LB[player.Slot] & PlayerButtons.Jump) == 0 && (buttons & PlayerButtons.Jump) != 0 && J[player.Slot] < 1)
+            else if ((LB[player.Slot] & PlayerButtons.Jump) == 0 && (buttons & PlayerButtons.Jump) != 0 && J[player.Slot] < 5)
             {
                 J[player.Slot] ++;
                 playerPawn.AbsVelocity.Z = 300;
